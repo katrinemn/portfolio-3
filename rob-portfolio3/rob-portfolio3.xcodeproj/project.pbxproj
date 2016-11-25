@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55BC39E51DE8650500EA2347 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39E11DE8650500EA2347 /* Image.cpp */; };
-		55BC39E61DE8650500EA2347 /* source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39E41DE8650500EA2347 /* source.cpp */; };
-		55BC39EC1DE8654300EA2347 /* PPMLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39EA1DE8654300EA2347 /* PPMLoader.cpp */; };
+		55BC3A001DE8745900EA2347 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39F41DE8745900EA2347 /* Image.cpp */; };
+		55BC3A011DE8745900EA2347 /* Pixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39F81DE8745900EA2347 /* Pixel.cpp */; };
+		55BC3A021DE8745900EA2347 /* PPMLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39FA1DE8745900EA2347 /* PPMLoader.cpp */; };
+		55BC3A031DE8745900EA2347 /* Robot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39FC1DE8745900EA2347 /* Robot.cpp */; };
+		55BC3A041DE8745900EA2347 /* source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39FE1DE8745900EA2347 /* source.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,14 +27,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		55BC39D71DE864D000EA2347 /* rob-portfolio3x */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "rob-portfolio3x"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55BC39E11DE8650500EA2347 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
-		55BC39E41DE8650500EA2347 /* source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = source.cpp; sourceTree = "<group>"; };
-		55BC39E71DE8654300EA2347 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Image.hpp; sourceTree = "<group>"; };
-		55BC39E81DE8654300EA2347 /* inputImage.pgm */ = {isa = PBXFileReference; lastKnownFileType = file; path = inputImage.pgm; sourceTree = "<group>"; };
-		55BC39E91DE8654300EA2347 /* macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = macros.hpp; sourceTree = "<group>"; };
-		55BC39EA1DE8654300EA2347 /* PPMLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPMLoader.cpp; sourceTree = "<group>"; };
-		55BC39EB1DE8654300EA2347 /* PPMLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PPMLoader.hpp; sourceTree = "<group>"; };
+		55BC39D71DE864D000EA2347 /* rob-portfolio3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "rob-portfolio3"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BC39F41DE8745900EA2347 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = "rob-portfolio3/Image.cpp"; sourceTree = "<group>"; };
+		55BC39F51DE8745900EA2347 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Image.hpp; path = "rob-portfolio3/Image.hpp"; sourceTree = "<group>"; };
+		55BC39F61DE8745900EA2347 /* inputImage.pgm */ = {isa = PBXFileReference; lastKnownFileType = file; name = inputImage.pgm; path = "rob-portfolio3/inputImage.pgm"; sourceTree = "<group>"; };
+		55BC39F71DE8745900EA2347 /* macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = macros.hpp; path = "rob-portfolio3/macros.hpp"; sourceTree = "<group>"; };
+		55BC39F81DE8745900EA2347 /* Pixel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pixel.cpp; path = "rob-portfolio3/Pixel.cpp"; sourceTree = "<group>"; };
+		55BC39F91DE8745900EA2347 /* Pixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pixel.h; path = "rob-portfolio3/Pixel.h"; sourceTree = "<group>"; };
+		55BC39FA1DE8745900EA2347 /* PPMLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PPMLoader.cpp; path = "rob-portfolio3/PPMLoader.cpp"; sourceTree = "<group>"; };
+		55BC39FB1DE8745900EA2347 /* PPMLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PPMLoader.hpp; path = "rob-portfolio3/PPMLoader.hpp"; sourceTree = "<group>"; };
+		55BC39FC1DE8745900EA2347 /* Robot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Robot.cpp; path = "rob-portfolio3/Robot.cpp"; sourceTree = "<group>"; };
+		55BC39FD1DE8745900EA2347 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = "rob-portfolio3/Robot.h"; sourceTree = "<group>"; };
+		55BC39FE1DE8745900EA2347 /* source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = source.cpp; path = "rob-portfolio3/source.cpp"; sourceTree = "<group>"; };
+		55BC39FF1DE8745900EA2347 /* testout.pgm */ = {isa = PBXFileReference; lastKnownFileType = file; name = testout.pgm; path = "rob-portfolio3/testout.pgm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +56,7 @@
 		55BC39CE1DE864D000EA2347 = {
 			isa = PBXGroup;
 			children = (
-				55BC39D91DE864D000EA2347 /* rob-portfolio3x */,
+				55BC39F31DE8741D00EA2347 /* rob-portfolio3 */,
 				55BC39D81DE864D000EA2347 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,31 +64,36 @@
 		55BC39D81DE864D000EA2347 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55BC39D71DE864D000EA2347 /* rob-portfolio3x */,
+				55BC39D71DE864D000EA2347 /* rob-portfolio3 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		55BC39D91DE864D000EA2347 /* rob-portfolio3x */ = {
+		55BC39F31DE8741D00EA2347 /* rob-portfolio3 */ = {
 			isa = PBXGroup;
 			children = (
-				55BC39E71DE8654300EA2347 /* Image.hpp */,
-				55BC39E81DE8654300EA2347 /* inputImage.pgm */,
-				55BC39E91DE8654300EA2347 /* macros.hpp */,
-				55BC39EA1DE8654300EA2347 /* PPMLoader.cpp */,
-				55BC39EB1DE8654300EA2347 /* PPMLoader.hpp */,
-				55BC39E11DE8650500EA2347 /* Image.cpp */,
-				55BC39E41DE8650500EA2347 /* source.cpp */,
+				55BC39F41DE8745900EA2347 /* Image.cpp */,
+				55BC39F51DE8745900EA2347 /* Image.hpp */,
+				55BC39F61DE8745900EA2347 /* inputImage.pgm */,
+				55BC39F71DE8745900EA2347 /* macros.hpp */,
+				55BC39F81DE8745900EA2347 /* Pixel.cpp */,
+				55BC39F91DE8745900EA2347 /* Pixel.h */,
+				55BC39FA1DE8745900EA2347 /* PPMLoader.cpp */,
+				55BC39FB1DE8745900EA2347 /* PPMLoader.hpp */,
+				55BC39FC1DE8745900EA2347 /* Robot.cpp */,
+				55BC39FD1DE8745900EA2347 /* Robot.h */,
+				55BC39FE1DE8745900EA2347 /* source.cpp */,
+				55BC39FF1DE8745900EA2347 /* testout.pgm */,
 			);
-			path = "rob-portfolio3x";
+			name = "rob-portfolio3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55BC39D61DE864D000EA2347 /* rob-portfolio3x */ = {
+		55BC39D61DE864D000EA2347 /* rob-portfolio3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55BC39DE1DE864D000EA2347 /* Build configuration list for PBXNativeTarget "rob-portfolio3x" */;
+			buildConfigurationList = 55BC39DE1DE864D000EA2347 /* Build configuration list for PBXNativeTarget "rob-portfolio3" */;
 			buildPhases = (
 				55BC39D31DE864D000EA2347 /* Sources */,
 				55BC39D41DE864D000EA2347 /* Frameworks */,
@@ -91,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = "rob-portfolio3x";
+			name = "rob-portfolio3";
 			productName = "rob-portfolio3x";
-			productReference = 55BC39D71DE864D000EA2347 /* rob-portfolio3x */;
+			productReference = 55BC39D71DE864D000EA2347 /* rob-portfolio3 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55BC39D21DE864D000EA2347 /* Build configuration list for PBXProject "rob-portfolio3x" */;
+			buildConfigurationList = 55BC39D21DE864D000EA2347 /* Build configuration list for PBXProject "rob-portfolio3" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -122,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55BC39D61DE864D000EA2347 /* rob-portfolio3x */,
+				55BC39D61DE864D000EA2347 /* rob-portfolio3 */,
 			);
 		};
 /* End PBXProject section */
@@ -132,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55BC39E61DE8650500EA2347 /* source.cpp in Sources */,
-				55BC39EC1DE8654300EA2347 /* PPMLoader.cpp in Sources */,
-				55BC39E51DE8650500EA2347 /* Image.cpp in Sources */,
+				55BC3A041DE8745900EA2347 /* source.cpp in Sources */,
+				55BC3A031DE8745900EA2347 /* Robot.cpp in Sources */,
+				55BC3A021DE8745900EA2347 /* PPMLoader.cpp in Sources */,
+				55BC3A011DE8745900EA2347 /* Pixel.cpp in Sources */,
+				55BC3A001DE8745900EA2347 /* Image.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,21 +239,21 @@
 		55BC39DF1DE864D000EA2347 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "rob-portfolio3";
 			};
 			name = Debug;
 		};
 		55BC39E01DE864D000EA2347 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "rob-portfolio3";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55BC39D21DE864D000EA2347 /* Build configuration list for PBXProject "rob-portfolio3x" */ = {
+		55BC39D21DE864D000EA2347 /* Build configuration list for PBXProject "rob-portfolio3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55BC39DC1DE864D000EA2347 /* Debug */,
@@ -248,13 +262,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55BC39DE1DE864D000EA2347 /* Build configuration list for PBXNativeTarget "rob-portfolio3x" */ = {
+		55BC39DE1DE864D000EA2347 /* Build configuration list for PBXNativeTarget "rob-portfolio3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55BC39DF1DE864D000EA2347 /* Debug */,
 				55BC39E01DE864D000EA2347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
