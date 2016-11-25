@@ -12,7 +12,7 @@ using namespace rw::loaders;
 
 
 int main(int argc) { 
-    std::string filename("map.pgm");
+    std::string filename("inputImage.pgm");
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
 
