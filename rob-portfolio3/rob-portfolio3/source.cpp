@@ -16,7 +16,7 @@ int main(int argc) {
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
 
-    // do stuff here
+    // do stuff here hej
 	int channel = 0; // allways 0 on grayscale image
 
     std::cout << "Image loaded" << std::endl;
