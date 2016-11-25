@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>rob_port3.xcscheme</key>
+		<key>rob-portfolio3x.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55BC39C31DE85D0A00EA2347</key>
+		<key>55BC39D61DE864D000EA2347</key>
 		<dict>
 			<key>primary</key>
 			<true/>

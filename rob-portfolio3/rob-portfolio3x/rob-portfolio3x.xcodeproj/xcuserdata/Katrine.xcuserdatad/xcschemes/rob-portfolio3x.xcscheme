@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55BC39C31DE85D0A00EA2347"
-               BuildableName = "rob_port3"
-               BlueprintName = "rob_port3"
-               ReferencedContainer = "container:rob_port3.xcodeproj">
+               BlueprintIdentifier = "55BC39D61DE864D000EA2347"
+               BuildableName = "rob-portfolio3x"
+               BlueprintName = "rob-portfolio3x"
+               ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55BC39C31DE85D0A00EA2347"
-            BuildableName = "rob_port3"
-            BlueprintName = "rob_port3"
-            ReferencedContainer = "container:rob_port3.xcodeproj">
+            BlueprintIdentifier = "55BC39D61DE864D000EA2347"
+            BuildableName = "rob-portfolio3x"
+            BlueprintName = "rob-portfolio3x"
+            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -46,7 +46,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
+      customWorkingDirectory = "/Users/Katrine/Desktop/rob_port3/rob-portfolio3/rob-portfolio3"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -55,12 +56,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55BC39C31DE85D0A00EA2347"
-            BuildableName = "rob_port3"
-            BlueprintName = "rob_port3"
-            ReferencedContainer = "container:rob_port3.xcodeproj">
+            BlueprintIdentifier = "55BC39D61DE864D000EA2347"
+            BuildableName = "rob-portfolio3x"
+            BlueprintName = "rob-portfolio3x"
+            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "inputImage.pgm"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -74,10 +81,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55BC39C31DE85D0A00EA2347"
-            BuildableName = "rob_port3"
-            BlueprintName = "rob_port3"
-            ReferencedContainer = "container:rob_port3.xcodeproj">
+            BlueprintIdentifier = "55BC39D61DE864D000EA2347"
+            BuildableName = "rob-portfolio3x"
+            BlueprintName = "rob-portfolio3x"
+            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
