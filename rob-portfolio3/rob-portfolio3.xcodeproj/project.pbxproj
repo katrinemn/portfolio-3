@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		557F0B471DE96BF100D7B7FB /* Sensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sensor.cpp; path = "rob-portfolio3/Sensor.cpp"; sourceTree = "<group>"; };
 		557F0B481DE96BF100D7B7FB /* Sensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Sensor.hpp; path = "rob-portfolio3/Sensor.hpp"; sourceTree = "<group>"; };
+		55B745C61DE9C0E600569F28 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = "rob-portfolio3/Defines.h"; sourceTree = "<group>"; };
 		55BC39D71DE864D000EA2347 /* rob-portfolio3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "rob-portfolio3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC39F41DE8745900EA2347 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = "rob-portfolio3/Image.cpp"; sourceTree = "<group>"; };
 		55BC39F51DE8745900EA2347 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Image.hpp; path = "rob-portfolio3/Image.hpp"; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 				55BC39FF1DE8745900EA2347 /* testout.pgm */,
 				557F0B471DE96BF100D7B7FB /* Sensor.cpp */,
 				557F0B481DE96BF100D7B7FB /* Sensor.hpp */,
+				55B745C61DE9C0E600569F28 /* Defines.h */,
 			);
 			name = "rob-portfolio3";
 			sourceTree = "<group>";

@@ -29,7 +29,7 @@ Pixel Sensor::getSurroundings(Image* img, Pixel begin, int distance)
         Pixel current1(begin.x+distance,y);
         getObject(begin, current1, img);
     }
-    img->setPixel8S(begin.x,begin.y , 1);
+    img->setPixel8S(begin.x,begin.y , ROBOT_PIXEL);
     Pixel null(0,0);
     return null;
 }
@@ -38,22 +38,27 @@ Pixel Sensor::getSurroundings(Image* img, Pixel begin, int distance)
 Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img)
 {
     vector<Pixel> route = getRoute(img, begin, current);
-    
+    Pixel target(-1,-1);
     for (int i = 0 ; i < route.size() ; i++)
     {
         int index;
+        
         if (route[0].x == begin.x && route[0].y == begin.y)
             index = i;
         else
             index = route.size()-1-i;
         
-        if (img->getPixelValuei(route[index].x,route[index].y , 0) == 0)
+        if (img->getPixelValuei(route[index].x,route[index].y , 0) == BLACK_PIXEL)
             break;
-        
-        img->setPixel8S(route[index].x,route[index].y , 100);
+        if (img->getPixelValuei(route[index].x,route[index].y , 0) == TARGET_PIXEL)
+        {
+            Pixel newTarget(route[index].x,route[index].y);
+            target = newTarget;
+        }
+        else
+            img->setPixel8S(route[index].x,route[index].y , VISITED_PIXEL);
     }
-    Pixel null(0,0);
-    return null;
+    return target;
 }
 
 vector<Pixel> Sensor::getRoute(Image* loadedImg, Pixel from, Pixel to)
