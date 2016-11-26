@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557F0B491DE96BF100D7B7FB /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 557F0B471DE96BF100D7B7FB /* Sensor.cpp */; };
 		55BC3A001DE8745900EA2347 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39F41DE8745900EA2347 /* Image.cpp */; };
 		55BC3A011DE8745900EA2347 /* Pixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39F81DE8745900EA2347 /* Pixel.cpp */; };
 		55BC3A021DE8745900EA2347 /* PPMLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55BC39FA1DE8745900EA2347 /* PPMLoader.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		557F0B471DE96BF100D7B7FB /* Sensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sensor.cpp; path = "rob-portfolio3/Sensor.cpp"; sourceTree = "<group>"; };
+		557F0B481DE96BF100D7B7FB /* Sensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Sensor.hpp; path = "rob-portfolio3/Sensor.hpp"; sourceTree = "<group>"; };
 		55BC39D71DE864D000EA2347 /* rob-portfolio3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "rob-portfolio3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC39F41DE8745900EA2347 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = "rob-portfolio3/Image.cpp"; sourceTree = "<group>"; };
 		55BC39F51DE8745900EA2347 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Image.hpp; path = "rob-portfolio3/Image.hpp"; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				55BC39FD1DE8745900EA2347 /* Robot.h */,
 				55BC39FE1DE8745900EA2347 /* source.cpp */,
 				55BC39FF1DE8745900EA2347 /* testout.pgm */,
+				557F0B471DE96BF100D7B7FB /* Sensor.cpp */,
+				557F0B481DE96BF100D7B7FB /* Sensor.hpp */,
 			);
 			name = "rob-portfolio3";
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				55BC3A021DE8745900EA2347 /* PPMLoader.cpp in Sources */,
 				55BC3A011DE8745900EA2347 /* Pixel.cpp in Sources */,
 				55BC3A001DE8745900EA2347 /* Image.cpp in Sources */,
+				557F0B491DE96BF100D7B7FB /* Sensor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
