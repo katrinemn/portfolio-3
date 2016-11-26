@@ -5,17 +5,25 @@
 #include <cmath>
 #include <math.h>
 #include <string>
-
+#include "Sensor.hpp"
 
 using namespace std;
 using namespace rw::sensor;
 using namespace rw::loaders;
 
 
-int main(int argc) {
+int main(int argc)
+{
     std::string filename("inputImage.pgm");
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
+    Sensor object;
+    Pixel start(30,30);
+    Pixel end(80,180);
+    //object.drawLine(start, end, img);
+    object.getSurroundings(img, start, 80);
+      //  cout << "virker" << endl;
+    /*
     for( int i = 0; i < img->getWidth();i++)
     {
         for (int j = 0; j < img->getHeight();j++)
@@ -26,6 +34,7 @@ int main(int argc) {
                 img->setPixel8S(i, j, 255);
         }
     }
+     */
     // do stuff here
 	int channel = 0; // allways 0 on grayscale image
 
