@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
+#include "Robot.h"
 
 
 
@@ -12,18 +13,23 @@ using namespace rw::loaders;
 
 
 int main(int argc) { 
-    std::string filename("map.pgm");
+    std::string filename("inputImage.pgm");
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
-
     // do stuff here
 	int channel = 0; // allways 0 on grayscale image
 
     std::cout << "Image loaded" << std::endl;
 
-    std::cout << std::endl << "saving image..." << std::endl;
+    //make robot
+    Robot roboKat(img);
+
+    roboKat.mapEnviroment();
+    
+
     //Save maps
-	img->saveAsPGM("testout.pgm");
+    std::cout << std::endl << "saving image..." << std::endl;
+    roboKat.saveInternMaps();
 
     system("pause");
 }
