@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
-#include "Astar.h"
+#include "Robot.h"
 
 
 
@@ -16,24 +16,20 @@ int main(int argc) {
     std::string filename("inputImage.pgm");
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
-
-	// Some graph
-	//AStar as(10);
-
-	//as.makeGraph();
-
-	//as.printGraph();
-	//as.searchPath();
-	
-
-    // do stuff here hej
+    // do stuff here
 	int channel = 0; // allways 0 on grayscale image
 
     std::cout << "Image loaded" << std::endl;
 
-    std::cout << std::endl << "saving image..." << std::endl;
+    //make robot
+    Robot roboKat(img);
+
+    roboKat.mapEnviroment();
+    
+
     //Save maps
-	img->saveAsPGM("testout.pgm");
+    std::cout << std::endl << "saving image..." << std::endl;
+    roboKat.saveInternMaps();
 
     system("pause");
 }
