@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
+#include "Astar.h"
 
 
 
@@ -15,6 +16,15 @@ int main(int argc) {
     std::string filename("inputImage.pgm");
     std::cout << "loading image..." << std::endl;
     Image* img = PPMLoader::load(filename);
+
+	// Some graph
+	//AStar as(10);
+
+	//as.makeGraph();
+
+	//as.printGraph();
+	//as.searchPath();
+	
 
     // do stuff here hej
 	int channel = 0; // allways 0 on grayscale image

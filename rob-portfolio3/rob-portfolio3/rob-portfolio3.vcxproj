@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Astar.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Pixel.cpp" />
     <ClCompile Include="PPMLoader.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Astar.h" />
     <ClInclude Include="Image.hpp" />
     <ClInclude Include="macros.hpp" />
     <ClInclude Include="Pixel.h" />
