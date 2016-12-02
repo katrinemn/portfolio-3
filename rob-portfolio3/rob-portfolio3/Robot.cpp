@@ -63,6 +63,9 @@ void Robot::mapEnviroment()
                 if(clearPath)
                     graph.addEdge(i, v, 8);
             }
+
+            //If sentence for diagonal edges. forloop needs to be nested as both x and y moves each time. No straight lines
+
         }
     }
 
