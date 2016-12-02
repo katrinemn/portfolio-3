@@ -5,6 +5,7 @@
 using rw::sensor::Image;
 
 #define VERTEX 100
+#define EDGE 70
 
 class Robot
 {

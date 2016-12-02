@@ -15,6 +15,11 @@ struct Pixel
     int y;
 
     Pixel(int x, int y) : x(x), y(y) {}
+
+    bool operator==(const Pixel& rhs)
+    {
+        return this->x == rhs.x && this->y == rhs.y;
+    }
 };
 
 struct Vertex
@@ -23,7 +28,7 @@ struct Vertex
     Vertex* path; // parent
     bool known;
     int dist;
-    vector<int> weigt;
+    vector<int> weigt;    
     list<Vertex*> adj; // Pointer to an array containing adjacency lists
 
     Vertex(Pixel n) : data(n){}
@@ -38,6 +43,7 @@ public:
 
     void addNode(Vertex v);
     void addEdge(Vertex* parent, Vertex* v, int weight);
+    vector<Vertex>* getNodesPointer();
 
     vector<Vertex> nodes;
 protected:
