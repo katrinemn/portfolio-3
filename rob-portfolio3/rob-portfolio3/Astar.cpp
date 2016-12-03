@@ -9,25 +9,6 @@ AStar::AStar(Graph &g)
 	graph = &g; // graph is not copied over in this program
 }
 
-//void AStar::printAStar(Vertex* s, Vertex* v)
-//{
-//	if (v != s) // recursivly find the path from the goal, until we hit the desired start point
-//	{
-//		printAStar(s, v->path);
-//		cout << " to ";
-//	}
-//	cout << v->data.x;
-//}
-
-bool AStar::stillUnknown() // if there is still unknown nodes, we keep running
-{
-	for (auto v : graph->nodes)
-	{
-		if (!v.known)
-			return true;
-	}
-	return false;
-}
 int AStar::calculateHscore(Vertex* st, Vertex* go)
 {
 	int H = (abs(st->data.x - go->data.x) + abs(st->data.y - go->data.y));
