@@ -6,6 +6,9 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <climits>
+#define INFINITY INT_MAX
+
 // Class to represent a graph
 using namespace std;
 
@@ -28,10 +31,14 @@ struct Vertex
     Vertex* path; // parent
     bool known;
     int dist;
-    vector<int> weigt;    
+	int gScore = INFINITY;
+	int fScore = INFINITY;
+    vector<int> weight;    
     list<Vertex*> adj; // Pointer to an array containing adjacency lists
+	
 
     Vertex(Pixel n) : data(n){}
+	
 };
 
 class Graph
@@ -45,7 +52,10 @@ public:
     void addEdge(Vertex* parent, Vertex* v, int weight);
     vector<Vertex>* getNodesPointer();
 
+
+
     vector<Vertex> nodes;
+
 protected:
     int V; // Number of vertices'
 
