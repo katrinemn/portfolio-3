@@ -22,7 +22,7 @@ int main(int argc) {
     std::cout << "Image loaded" << std::endl;
 
     //make robot
-    Robot roboKat(img);
+    Robot roboKat(img, 10,10);
 
     roboKat.mapEnviroment();
     

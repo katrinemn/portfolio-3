@@ -6,8 +6,10 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include "Image.hpp"
 // Class to represent a graph
 using namespace std;
+using namespace rw::sensor;
 
 struct Pixel
 {
@@ -15,6 +17,13 @@ struct Pixel
     int y;
 
     Pixel(int x, int y) : x(x), y(y) {}
+    Pixel() {};
+
+    int getValue(Image* img)
+    {
+        return img->getPixelValuei(x, y, 0);
+    }
+
 
     bool operator==(const Pixel& rhs)
     {
@@ -26,12 +35,13 @@ struct Vertex
 {
     Pixel data;
     Vertex* path; // parent
-    bool known;
+    bool known; //used to find first unvisited vertex when standinging at a point with no unvisted neighbours. Is reset multiple times. Don't rely on this for anything else
     int dist;
+    bool visited;
     vector<int> weigt;    
     list<Vertex*> adj; // Pointer to an array containing adjacency lists
 
-    Vertex(Pixel n) : data(n){}
+    Vertex(Pixel n) : data(n), visited(false){}
 };
 
 class Graph
