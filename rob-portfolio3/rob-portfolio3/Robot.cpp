@@ -11,6 +11,7 @@ Robot::Robot(Image* map)
 void Robot::mapEnviroment()
 {
     //run though map in sensor length bloks
+	// +- 5 is for black border around image
     for (int y = 5; y < img->getHeight()-5; y += sensorLength*2)
     {
         for (int x = 5; x < img->getWidth()-5; x += sensorLength*2)
