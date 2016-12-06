@@ -109,6 +109,7 @@ vector<Vertex*> Robot::findReturnPath(Vertex& start, Vertex& goal, Graph& graph)
 	AStar as;
 	vector<Vertex*> dummy;
 	dummy = as.searchAStar(start, goal, graph);
+	cout << "size1 " << dummy.size() << endl;
 	colorPath(dummy);
 	
 	return dummy;
@@ -126,9 +127,10 @@ void Robot::listNodes()
 
 void Robot::colorPath(vector<Vertex*> path)
 {
-
-	for(auto v : path)
-		graphMap->setPixel8U(v->data.x, v->data.y, PATH);
+	cout << "size " << path.size();
+	for (auto v : path)
+		cout << "coord " << v->data.x << "," << v->data.y << endl;
+		//graphMap->setPixel8U(v->data.x, v->data.y, PATH);
 }
 
 Robot::~Robot()
