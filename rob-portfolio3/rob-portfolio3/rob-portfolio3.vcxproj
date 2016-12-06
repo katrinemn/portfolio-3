@@ -165,9 +165,14 @@
     <ClInclude Include="Sensor.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="astarmap.pgm" />
     <None Include="drivingMap.pgm" />
     <None Include="grafMap.pgm" />
     <None Include="inputImage.pgm" />
+    <None Include="inputTargets.pgm" />
+    <None Include="moveMap.pgm" />
+    <None Include="sensorMap.pgm" />
+    <None Include="testout.pgm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

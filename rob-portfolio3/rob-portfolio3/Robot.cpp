@@ -14,6 +14,7 @@ Robot::Robot(Image* map, Image* tMap, int startX, int startY)
     graphMap = map->copyFlip(false, false);    
     drivingMap = map->copyFlip(false, false);
 	moveMap = map->copyFlip(false, false);
+	astarMap = map->copyFlip(false, false);
 }
 
 void Robot::runRobot()
@@ -42,37 +43,29 @@ void Robot::runRobot()
 			//move back to dropoff
 			for (int i = 0; i < wayHome.size()-1; i++)
 			{
-				colorPath(wayHome[i]->data, wayHome[i + 1]->data, moveMap);
+				colorPath(wayHome[i]->data, wayHome[i + 1]->data, astarMap);
 			}
 
 			//color from end vertex to dropoff
 			currPos = wayHome[wayHome.size()-1]->data;
-			colorPath(currPos, startPoint, moveMap);
+			colorPath(currPos, startPoint, astarMap);
 
 
 			//dropped off banana, now gotta get back
 			//move to closest vertex
 			pos = findClosestVertexTo(startPoint.x, startPoint.y);
-			colorPath(startPoint, pos->data, moveMap);
+			colorPath(startPoint, pos->data, astarMap);
 			currPos = pos->data;
 
 			//find path back to next pos
 			auto backToPoint = findReturnPath(pos, drivePath.front());
 
-			queue<Vertex*> temp;
-			//remake queue
-			for (int i = 0; i < backToPoint.size(); i++)
+			//get back to where it saw the target, and keep searching
+			for (int i = 0; i < backToPoint.size()-1; i++)
 			{
-				temp.push(backToPoint[i]);
+				colorPath(backToPoint[i]->data, backToPoint[i + 1]->data, astarMap);
 			}
-			while (!drivePath.empty())
-			{
-				temp.push(drivePath.front());
-				drivePath.pop();
-			}
-
-			//drive path updated with way back to point and continuie from there
-			drivePath = temp;
+			continue;
 		}
 		//go to next point in queue
 		Vertex* next = drivePath.front();
@@ -387,6 +380,7 @@ void Robot::saveInternMaps()
     drivingMap->saveAsPGM("drivingMap.pgm");
 	moveMap->saveAsPGM("moveMap.pgm");
 	sensorMap->saveAsPGM("sensorMap.pgm");
+	astarMap->saveAsPGM("astarmap.pgm");
 }
 void Robot::find()
 {

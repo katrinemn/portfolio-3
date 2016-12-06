@@ -38,6 +38,7 @@ private:
     Image* drivingMap;
 	Image* sensorMap;
 	Image* moveMap;
+	Image* astarMap;
     Graph graph;
     queue<Vertex*> drivePath;
 };
