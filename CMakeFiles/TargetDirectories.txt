@@ -1,3 +1,0 @@
-/Users/Katrine/Desktop/robport3/CMakeFiles/readpgmtest.dir
-/Users/Katrine/Desktop/robport3/CMakeFiles/ALL_BUILD.dir
-/Users/Katrine/Desktop/robport3/CMakeFiles/ZERO_CHECK.dir
