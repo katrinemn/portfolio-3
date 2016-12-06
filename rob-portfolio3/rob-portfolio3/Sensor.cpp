@@ -15,19 +15,28 @@ Sensor::Sensor()
 
 Pixel Sensor::getSurroundings(Image* img, Pixel begin, int distance)
 {
+    Pixel target(0,0);
     for (int x = begin.x - distance; x <= begin.x + distance; x++)
     {
         Pixel current(x,begin.y-distance);
-        getObject(begin, current, img);
+        target = getObject(begin, current, img);
+        if(target.x && target.y)
+            return target;
         Pixel current1(x,begin.y+distance);
-        getObject(begin, current1, img);
+        target = getObject(begin, current1, img);
+        if(target.x && target.y)
+            return target;
     }
     for (int y = begin.y - distance; y <= begin.y + distance; y++)
     {
         Pixel current(begin.x-distance,y);
-        getObject(begin, current, img);
+        target = getObject(begin, current, img);
+        if(target.x && target.y)
+            return target;
         Pixel current1(begin.x+distance,y);
-        getObject(begin, current1, img);
+        target = getObject(begin, current1, img);
+        if(target.x && target.y)
+            return target;
     }
     img->setPixel8S(begin.x,begin.y , ROBOT_PIXEL);
     Pixel null(0,0);
@@ -38,7 +47,7 @@ Pixel Sensor::getSurroundings(Image* img, Pixel begin, int distance)
 Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img)
 {
     vector<Pixel> route = getRoute(img, begin, current);
-    Pixel target(-1,-1);
+    Pixel target(0,0);
     for (int i = 0 ; i < route.size() ; i++)
     {
         int index;
@@ -52,13 +61,14 @@ Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img)
             break;
         if (img->getPixelValuei(route[index].x,route[index].y , 0) == TARGET_PIXEL)
         {
-            Pixel newTarget(route[index].x,route[index].y);
-            target = newTarget;
+            Pixel target(route[index].x,route[index].y);
+            return target;
         }
         else
             img->setPixel8S(route[index].x,route[index].y , VISITED_PIXEL);
     }
-    return target;
+    Pixel null(0,0);
+    return null;
 }
 
 vector<Pixel> Sensor::getRoute(Image* loadedImg, Pixel from, Pixel to)
