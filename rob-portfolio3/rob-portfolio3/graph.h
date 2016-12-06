@@ -32,6 +32,11 @@ struct Pixel
     {
         return this->x == rhs.x && this->y == rhs.y;
     }
+
+	bool operator!=(const Pixel& rhs)
+	{
+		return this->x != rhs.x || this->y != rhs.y;
+	}
 };
 
 struct Vertex

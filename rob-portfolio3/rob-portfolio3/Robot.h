@@ -1,23 +1,22 @@
 #pragma once
 #include "Image.hpp"
 #include "graph.h"
+#include "Sensor.hpp"
+#include "Defines.h"
 
 using namespace rw::sensor;
-
-#define VERTEX 255
-#define EDGE 255
-#define PATH 0
 
 class Robot
 {
 public:
-	Robot(Image* map, int startX, int startY);
+	Robot(Image* map, Image* tMap, int startX, int startY);
     void mapEnviroment();
     void saveInternMaps();
 	void colorPath(vector<Vertex*> path); // to color path
 	void listNodes(); // list index and x,y position
+	void runRobot();
 
-	vector<Vertex*> findReturnPath(Vertex& start, Vertex& goal, Graph& g);
+	vector<Vertex*> findReturnPath(Vertex* start, Vertex* goal);
 	void find();
 	~Robot();
 
@@ -28,13 +27,17 @@ private:
     Vertex* firstUnvistedVertex(Vertex* startPoint);
     void markDrivePath(queue<Vertex*> path);
     void markGraphMap();
+	void colorPath(Pixel start, Pixel slut, Image* img);
 
+	Sensor robSensor;
     Pixel startPoint;
-    int sensorLength = 8; //sensor reaches 8x8 around robot
-	int xPos, yPos;
+    int gridSize = 8; //sensor reaches 8x8 around robot
+	Pixel currPos;
 	Image* img;
     Image* graphMap;
     Image* drivingMap;
+	Image* sensorMap;
+	Image* moveMap;
     Graph graph;
     queue<Vertex*> drivePath;
 };

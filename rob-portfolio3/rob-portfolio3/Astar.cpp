@@ -55,8 +55,7 @@ bool AStar::isInOpenSet(Vertex* v)
 }
 
 vector<Vertex*> AStar::getPath(Vertex* start, Vertex* cur)
-{
-	total_path.push_back(start);
+{	
 	if (start->data.x == cur->data.x && start->data.y == cur->data.y)
 		return total_path;
 		getPath(start, cur->path);
@@ -65,11 +64,11 @@ vector<Vertex*> AStar::getPath(Vertex* start, Vertex* cur)
 	return total_path;
 }
 
-vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
+vector<Vertex*> AStar::searchAStar(Vertex* start, Vertex* goal)
 {
 	closedSet.clear(); // // closedSet is the set of nodes already evaluated
 
-	openSet.push_back(&start); // push start to open set
+	openSet.push_back(start); // push start to open set
 
 	openSet.back()->gScore = 0; // The cost of going from start to start is zero.
 
@@ -77,7 +76,7 @@ vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
 	// by passing by that node. That value is partly known, partly heuristic.
 
 	// For the first node, that value is completely heuristic.
-	openSet.back()->fScore = calculateHscore(&start, &goal);
+	openSet.back()->fScore = calculateHscore(start, goal);
 
 	int c = 0; // used to keep tract og current
 	int tmp; // used to keep tract of index number
@@ -89,12 +88,13 @@ vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
 
 		// if current is goal, then append the goal with updated parent information
 		// and then find the total path and return it to robot
-		if ((current->data.x == goal.data.x)  && (current->data.y == goal.data.y)) 
+		if ((current->data.x == goal->data.x)  && (current->data.y == goal->data.y)) 
 		{
-			goal.path = cameFrom;
-			goal.path = cameFrom;
-			total_path = getPath(&start, &goal);
-			total_path.push_back(&goal);
+			total_path.push_back(start);
+			goal->path = cameFrom;
+			goal->path = cameFrom;
+			total_path = getPath(start, goal);
+			//total_path.push_back(&goal);
 			return total_path; 
 		}
 
@@ -127,7 +127,7 @@ vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
 				cameFrom = current;
 				w->path = current;
 				w->gScore = tentative_gScore;
-				w->fScore = w->gScore + calculateHscore(w, &goal);
+				w->fScore = w->gScore + calculateHscore(w, goal);
 			} // else skip that one
 
 		}

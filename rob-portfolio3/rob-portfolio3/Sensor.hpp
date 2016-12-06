@@ -8,23 +8,23 @@
 
 #ifndef Sensor_hpp
 #define Sensor_hpp
-#include "Pixel.h"
 #include <stdio.h>
 #include <vector>
 #include <iostream>
-#include <tgmath.h>
+#include "graph.h"
+#include <math.h>
 #include "Defines.h"
 using namespace std;
 class Sensor
 {
 public:
     Sensor();
-    Pixel getSurroundings(Image* img, Pixel begin, int distance);
+    Pixel getSurroundings(Image* img, Image* imgTarget, Pixel begin, int distance);
     vector<Pixel> getRoute(Image* loadedImg, Pixel from, Pixel to);
     ~Sensor();
 private:
     int Sign(double x);
-    Pixel getObject(Pixel begin, Pixel current, Image* img);
+    Pixel getObject(Pixel begin, Pixel current, Image* img, Image* imgTarget);
     
 };
 #endif /* Sensor_hpp */

@@ -13,38 +13,38 @@ Sensor::Sensor()
     
 }
 
-Pixel Sensor::getSurroundings(Image* img, Pixel begin, int distance)
+Pixel Sensor::getSurroundings(Image* img, Image* imgTargets, Pixel begin, int distance)
 {
     Pixel target(0,0);
     for (int x = begin.x - distance; x <= begin.x + distance; x++)
     {
         Pixel current(x,begin.y-distance);
-        target = getObject(begin, current, img);
+        target = getObject(begin, current, img, imgTargets);
         if(target.x && target.y)
             return target;
         Pixel current1(x,begin.y+distance);
-        target = getObject(begin, current1, img);
+        target = getObject(begin, current1, img, imgTargets);
         if(target.x && target.y)
             return target;
     }
     for (int y = begin.y - distance; y <= begin.y + distance; y++)
     {
         Pixel current(begin.x-distance,y);
-        target = getObject(begin, current, img);
+        target = getObject(begin, current, img, imgTargets);
         if(target.x && target.y)
             return target;
         Pixel current1(begin.x+distance,y);
-        target = getObject(begin, current1, img);
+        target = getObject(begin, current1, img, imgTargets);
         if(target.x && target.y)
             return target;
     }
     img->setPixel8S(begin.x,begin.y , ROBOT_PIXEL);
-    Pixel null(0,0);
+    Pixel null(-1,-1);
     return null;
 }
 
 
-Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img)
+Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img, Image* imgTarget)
 {
     vector<Pixel> route = getRoute(img, begin, current);
     Pixel target(0,0);
@@ -59,7 +59,7 @@ Pixel Sensor::getObject(Pixel begin, Pixel current, Image* img)
         
         if (img->getPixelValuei(route[index].x,route[index].y , 0) == BLACK_PIXEL)
             break;
-        if (img->getPixelValuei(route[index].x,route[index].y , 0) == TARGET_PIXEL)
+        if (imgTarget->getPixelValuei(route[index].x,route[index].y , 0) == TARGET_PIXEL)
         {
             Pixel target(route[index].x,route[index].y);
             return target;

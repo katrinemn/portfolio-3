@@ -16,7 +16,7 @@ class AStar
 public:
 	AStar();
 	AStar(Graph &g);
-	vector<Vertex*> searchAStar(Vertex start, Vertex goal, Graph graph);
+	vector<Vertex*> searchAStar(Vertex* start, Vertex* goal);
 	vector<Vertex*> getPath(Vertex* start,Vertex* current);
 
 	~AStar();
