@@ -101,7 +101,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -146,16 +146,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="Image.cpp" />
-    <ClCompile Include="Pixel.cpp" />
     <ClCompile Include="PPMLoader.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graph.h" />
     <ClInclude Include="Image.hpp" />
     <ClInclude Include="macros.hpp" />
-    <ClInclude Include="Pixel.h" />
     <ClInclude Include="PPMLoader.hpp" />
     <ClInclude Include="Robot.h" />
   </ItemGroup>
