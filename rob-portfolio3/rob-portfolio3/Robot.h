@@ -4,8 +4,9 @@
 
 using namespace rw::sensor;
 
-#define VERTEX 100
-#define EDGE 70
+#define VERTEX 255
+#define EDGE 255
+#define PATH 0
 
 class Robot
 {
@@ -13,6 +14,11 @@ public:
 	Robot(Image* map, int startX, int startY);
     void mapEnviroment();
     void saveInternMaps();
+	void colorPath(vector<Vertex*> path); // to color path
+	void listNodes(); // list index and x,y position
+
+	vector<Vertex*> findReturnPath(Vertex& start, Vertex& goal, Graph& g);
+	void find();
 	~Robot();
 
 private:

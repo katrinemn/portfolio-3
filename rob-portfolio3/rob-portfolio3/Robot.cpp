@@ -1,4 +1,5 @@
 #include "Robot.h"
+#include "Astar.h"
 
 
 
@@ -254,6 +255,42 @@ void Robot::saveInternMaps()
     img->saveAsPGM("testout.pgm");
     graphMap->saveAsPGM("grafMap.pgm");
     drivingMap->saveAsPGM("drivingMap.pgm");
+}
+void Robot::find()
+{
+	cout << "Start A* search" << endl;
+	int start = 0;
+	int goal = graph.nodes.size()-1;
+	cout << "I USE START VERTEX: "<< start << " with (x,y) = (" << graph.nodes[start].data.x << "," << graph.nodes[start].data.y << ")"<< endl;
+	cout << "I USE GOAL VERTEX: "<< goal << " with (x,y) = (" << graph.nodes[goal].data.x << "," << graph.nodes[goal].data.y<< ")" << endl;
+	findReturnPath(graph.nodes[start], graph.nodes[goal], graph);
+}
+vector<Vertex*> Robot::findReturnPath(Vertex& start, Vertex& goal, Graph& graph)
+{	
+
+	AStar as;
+	vector<Vertex*> dummy;
+	dummy = as.searchAStar(start, goal, graph);
+	colorPath(dummy);
+	
+	return dummy;
+}
+
+void Robot::listNodes()
+{
+	int counter = 0;
+	for (auto v : graph.nodes)
+	{
+		cout << "VERTEX: " << counter << " has (x,y) = (" << v.data.x << "," << v.data.y << ")" << endl;
+		counter++;
+	}
+}
+
+void Robot::colorPath(vector<Vertex*> path)
+{
+
+	for(auto v : path)
+		graphMap->setPixel8U(v->data.x, v->data.y, PATH);
 }
 
 Robot::~Robot()

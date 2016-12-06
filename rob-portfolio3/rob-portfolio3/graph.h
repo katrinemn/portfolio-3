@@ -6,6 +6,9 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <climits>
+#define INFINITY INT_MAX
+
 #include "Image.hpp"
 // Class to represent a graph
 using namespace std;
@@ -37,8 +40,11 @@ struct Vertex
     Vertex* path; // parent
     bool known; //used to find first unvisited vertex when standinging at a point with no unvisted neighbours. Is reset multiple times. Don't rely on this for anything else
     int dist;
+	int gScore = INFINITY;
+	int fScore = INFINITY;
+    vector<int> weight;    
     bool visited;
-    vector<int> weigt;    
+  
     list<Vertex*> adj; // Pointer to an array containing adjacency lists
 
     Vertex(Pixel n) : data(n), visited(false){}
@@ -55,7 +61,10 @@ public:
     void addEdge(Vertex* parent, Vertex* v, int weight);
     vector<Vertex>* getNodesPointer();
 
+
+
     vector<Vertex> nodes;
+
 protected:
     int V; // Number of vertices'
 
