@@ -4,11 +4,13 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
+#include <string>
+#include "Sensor.hpp"
 #include "Robot.h"
 #include "graph.h"
 #include "Astar.h"
 
-
+using namespace std;
 using namespace rw::sensor;
 using namespace rw::loaders;
 
