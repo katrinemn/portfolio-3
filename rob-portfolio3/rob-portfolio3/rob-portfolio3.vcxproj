@@ -149,7 +149,6 @@
     <ClCompile Include="Astar.cpp" />
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="Image.cpp" />
-    <ClCompile Include="Pixel.cpp" />
     <ClCompile Include="PPMLoader.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="source.cpp" />
@@ -159,7 +158,6 @@
     <ClInclude Include="graph.h" />
     <ClInclude Include="Image.hpp" />
     <ClInclude Include="macros.hpp" />
-    <ClInclude Include="Pixel.h" />
     <ClInclude Include="PPMLoader.hpp" />
     <ClInclude Include="Robot.h" />
   </ItemGroup>

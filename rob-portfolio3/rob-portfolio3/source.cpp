@@ -4,11 +4,13 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
+#include <string>
+#include "Sensor.hpp"
 #include "Robot.h"
 #include "graph.h"
 #include "Astar.h"
 
-
+using namespace std;
 using namespace rw::sensor;
 using namespace rw::loaders;
 
@@ -23,8 +25,8 @@ int main(int argc) {
 
 	std::cout << "Image loaded" << std::endl;
 
-	//make robot
-	Robot roboKat(img);
+    //make robot
+    Robot roboKat(img, 10,10);
 
 	roboKat.mapEnviroment();
 	

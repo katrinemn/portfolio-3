@@ -19,10 +19,6 @@ int main(int argc) {
     // do stuff here
 	int channel = 0; // allways 0 on grayscale image
 
-    std::cout << "Image loaded" << std::endl;
-
-    std::cout << std::endl << "saving image..." << std::endl;
-    //Save maps
 	img->saveAsPGM("testout.pgm");
 
     system("pause");

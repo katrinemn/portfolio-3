@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55BC39D61DE864D000EA2347"
-               BuildableName = "rob-portfolio3x"
-               BlueprintName = "rob-portfolio3x"
-               ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
+               BuildableName = "rob-portfolio3"
+               BlueprintName = "rob-portfolio3"
+               ReferencedContainer = "container:rob-portfolio3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55BC39D61DE864D000EA2347"
-            BuildableName = "rob-portfolio3x"
-            BlueprintName = "rob-portfolio3x"
-            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
+            BuildableName = "rob-portfolio3"
+            BlueprintName = "rob-portfolio3"
+            ReferencedContainer = "container:rob-portfolio3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55BC39D61DE864D000EA2347"
-            BuildableName = "rob-portfolio3x"
-            BlueprintName = "rob-portfolio3x"
-            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
+            BuildableName = "rob-portfolio3"
+            BlueprintName = "rob-portfolio3"
+            ReferencedContainer = "container:rob-portfolio3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55BC39D61DE864D000EA2347"
-            BuildableName = "rob-portfolio3x"
-            BlueprintName = "rob-portfolio3x"
-            ReferencedContainer = "container:rob-portfolio3x.xcodeproj">
+            BuildableName = "rob-portfolio3"
+            BlueprintName = "rob-portfolio3"
+            ReferencedContainer = "container:rob-portfolio3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
