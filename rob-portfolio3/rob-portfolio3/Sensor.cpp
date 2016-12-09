@@ -38,7 +38,7 @@ Pixel Sensor::getSurroundings(Image* img, Image* imgTargets, Pixel begin, int di
         if(target.x && target.y)
             return target;
     }
-    img->setPixel8S(begin.x,begin.y , ROBOT_PIXEL);
+    //img->setPixel8S(begin.x,begin.y , ROBOT_PIXEL);
     Pixel null(-1,-1);
     return null;
 }

@@ -39,6 +39,10 @@ void Robot::runRobot()
 			Vertex* pos = findClosestVertexTo(currPos.x, currPos.y);
 			Vertex* home = findClosestVertexTo(startPoint.x, startPoint.y);
 			auto wayHome = findReturnPath(pos, home);
+
+			//color and move to closest vertex
+			colorPath(currPos, pos->data, astarMap);
+			currPos = pos->data;
 			
 			//move back to dropoff
 			for (int i = 0; i < wayHome.size()-1; i++)
@@ -65,6 +69,7 @@ void Robot::runRobot()
 			{
 				colorPath(backToPoint[i]->data, backToPoint[i + 1]->data, astarMap);
 			}
+			currPos = backToPoint.back()->data;
 			continue;
 		}
 		//go to next point in queue
@@ -73,6 +78,8 @@ void Robot::runRobot()
 
 		colorPath(currPos, next->data, moveMap);
 		currPos = next->data;
+
+		astarMap->saveAsPGM("astarDEBUG.pgm");
 	}
 
 	//number of targets found
@@ -236,7 +243,7 @@ void Robot::markGraphMap()
 
 void Robot::markDrivePath(queue<Vertex*> path)
 {
-    int color = 10;
+    int color = 0;
     while (!path.empty())
     {
         Vertex* curr = path.front();
@@ -262,7 +269,7 @@ void Robot::markDrivePath(queue<Vertex*> path)
         }
 
         //Increment color
-        color += 2;
+        color += 1;
     }
 }
 
@@ -362,7 +369,7 @@ Vertex* Robot::findClosestVertexTo(int x, int y)
     for (auto i = 0; i < graph.nodes.size(); i++)
     {
         Vertex v = graph.nodes[i];
-        double newD = sqrt(pow(v.data.x - closest->data.x, 2) + pow(v.data.y - closest->data.y, 2));
+        double newD = sqrt(pow(v.data.x - x, 2) + pow(v.data.y - y, 2));
         if (newD < distance)
         {
             distance = newD;
