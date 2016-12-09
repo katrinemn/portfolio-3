@@ -20,6 +20,10 @@ public:
 	void find();
 	~Robot();
 
+	//Globals for pixel count
+	int searchPixels = 0;
+	int transportPixel = 0;
+
 private:
     void makeDrivingPath();
     Vertex* findClosestVertexTo(int x, int y);
@@ -27,7 +31,7 @@ private:
     Vertex* firstUnvistedVertex(Vertex* startPoint);
     void markDrivePath(queue<Vertex*> path);
     void markGraphMap();
-	void colorPath(Pixel start, Pixel slut, Image* img);
+	void colorPath(Pixel start, Pixel slut, Image* img, int* counter);
 
 	Sensor robSensor;
     Pixel startPoint;

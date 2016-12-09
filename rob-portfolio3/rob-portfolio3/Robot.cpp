@@ -32,7 +32,7 @@ void Robot::runRobot()
 			sensorMap->setPixel8U(target.x, target.y, VISITED_PIXEL);
 
 			//target found. Move directly to target as sensor means it is within sight
-			colorPath(currPos, target, moveMap);
+			colorPath(currPos, target, moveMap, &searchPixels);
 			currPos = target;
 
 			//move to dropoff point
@@ -41,24 +41,24 @@ void Robot::runRobot()
 			auto wayHome = findReturnPath(pos, home);
 
 			//color and move to closest vertex
-			colorPath(currPos, pos->data, astarMap);
+			colorPath(currPos, pos->data, astarMap, &transportPixel);
 			currPos = pos->data;
 			
 			//move back to dropoff
 			for (int i = 0; i < wayHome.size()-1; i++)
 			{
-				colorPath(wayHome[i]->data, wayHome[i + 1]->data, astarMap);
+				colorPath(wayHome[i]->data, wayHome[i + 1]->data, astarMap, &transportPixel);
 			}
 
 			//color from end vertex to dropoff
 			currPos = wayHome[wayHome.size()-1]->data;
-			colorPath(currPos, startPoint, astarMap);
+			colorPath(currPos, startPoint, astarMap, &transportPixel);
 
 
 			//dropped off banana, now gotta get back
 			//move to closest vertex
 			pos = findClosestVertexTo(startPoint.x, startPoint.y);
-			colorPath(startPoint, pos->data, astarMap);
+			colorPath(startPoint, pos->data, astarMap, &transportPixel);
 			currPos = pos->data;
 
 			//find path back to next pos
@@ -67,7 +67,7 @@ void Robot::runRobot()
 			//get back to where it saw the target, and keep searching
 			for (int i = 0; i < backToPoint.size()-1; i++)
 			{
-				colorPath(backToPoint[i]->data, backToPoint[i + 1]->data, astarMap);
+				colorPath(backToPoint[i]->data, backToPoint[i + 1]->data, astarMap, &transportPixel);
 			}
 			currPos = backToPoint.back()->data;
 			continue;
@@ -76,17 +76,18 @@ void Robot::runRobot()
 		Vertex* next = drivePath.front();
 		drivePath.pop();
 
-		colorPath(currPos, next->data, moveMap);
+		colorPath(currPos, next->data, moveMap, &searchPixels);
 		currPos = next->data;
-
-		astarMap->saveAsPGM("astarDEBUG.pgm");
 	}
 
 	//number of targets found
 	cout << "Targets found and dropped off: " << targetsFound << endl;
+	cout << "Pixel traversed during search: " << searchPixels << endl;
+	cout << "Pixel traversed during transport: " << transportPixel << endl;
+	cout << "Pixel traversed during Total: " << searchPixels + transportPixel << endl;
 }
 
-void Robot::colorPath(Pixel from, Pixel to, Image* img)
+void Robot::colorPath(Pixel from, Pixel to, Image* img, int* counter)
 {
 	double x1 = from.x;
 	double y1 = from.y;
@@ -120,10 +121,12 @@ void Robot::colorPath(Pixel from, Pixel to, Image* img)
 		if (steep)
 		{
 			img->setPixel8U(y, x, VISITED_PIXEL);
+			*counter = *counter + 1;
 		}
 		else
 		{
 			img->setPixel8U(x, y, VISITED_PIXEL);
+			*counter = *counter + 1;
 		}
 
 		error -= dy;
@@ -404,7 +407,7 @@ vector<Vertex*> Robot::findReturnPath(Vertex* start, Vertex* goal)
 	AStar as;
 	vector<Vertex*> dummy;
 	dummy = as.searchAStar(start, goal);
-	colorPath(dummy);
+	//colorPath(dummy);
 	
 	return dummy;
 }
