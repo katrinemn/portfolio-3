@@ -56,7 +56,7 @@ bool AStar::isInOpenSet(Vertex* v)
 
 vector<Vertex*> AStar::getPath(Vertex* start, Vertex* cur)
 {
-	//total_path.push_back(start);
+	total_path.push_back(start);
 	if (start->data.x == cur->data.x && start->data.y == cur->data.y)
 		return total_path;
 		getPath(start, cur->path);
@@ -95,7 +95,6 @@ vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
 			goal.path = cameFrom;
 			total_path = getPath(&start, &goal);
 			total_path.push_back(&goal);
-			cout << "size total_path: " << total_path.size() << endl;
 			return total_path; 
 		}
 
@@ -124,13 +123,11 @@ vector<Vertex*> AStar::searchAStar(Vertex start, Vertex goal, Graph g)
 				{
 					//cout << "tentative Gscore lower than neigbor.. do nothing.." << endl; 
 				}
-				
 				// this should have been in ELSE??.... but that does not work... this works :)
 				cameFrom = current;
 				w->path = current;
 				w->gScore = tentative_gScore;
 				w->fScore = w->gScore + calculateHscore(w, &goal);
-				
 			} // else skip that one
 
 		}
